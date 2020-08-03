@@ -14,9 +14,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         arSceneView.session.run(ARWorldTrackingConfiguration()) // Track the world
@@ -29,12 +28,13 @@ class ViewController: UIViewController {
     }
     
     func renderSocialDistanceRing() {
-        let ring = SCNTorus(ringRadius: 1.83, pipeRadius: 0.05)
+        let ring = SCNTorus(ringRadius: 1.83, pipeRadius: 0.01)
+        ring.materials[0].diffuse.contents = UIColor.blue
         let node = SCNNode()
         let scene = SCNScene()
         
         node.geometry = ring
-        node.position = SCNVector3(0,0,-1.5)
+        node.position = SCNVector3(0,-1.5,0)
         
         scene.rootNode.addChildNode(node)
         arSceneView.scene = scene
