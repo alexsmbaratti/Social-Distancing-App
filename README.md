@@ -1,4 +1,6 @@
 # Social Distancing App
+*密です!*
+
 A simple ARKit app that helps social distancing by displaying a ring around you in AR!
 
 ## Disclaimer
